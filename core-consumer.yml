@@ -1,0 +1,24 @@
+# Manifest del consumidor. Contrato e inventario a la vez (ARCHITECTURE.md §2.1).
+week: 22
+name: release-walker
+core_version: 1.3.0
+
+reused_modules:
+  - llm-client
+  - schema-validate
+  - secure-base
+  - test-kit
+  - cache-ratelimit
+  - parser-io
+  - agent-loop
+
+new_surface:
+  - "gate de release: versión/CHANGELOG/tag/árbol verificados por un agente con herramientas de lectura y git"
+  - "segundo consumidor de agent-loop (sem. 22): el patrón del walk se repite — D12 toma nota"
+  - "notas de release LLM validadas (release-notes-v1) sobre el diff medido del CHANGELOG"
+  - "veredicto ready/blockers sale de la medición de las herramientas, no de la opinión del modelo"
+
+estimated_new_surface: 25
+
+# Presupuesto máximo de evals en USD por semana (ARCHITECTURE.md §8.1).
+eval_budget_usd: 2.0

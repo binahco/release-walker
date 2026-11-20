@@ -1,0 +1,25 @@
+[project]
+name = "llm-release-walker"
+version = "0.1.0"
+description = "release-walker: un agente (agent-loop) verifica la preparación de un release del core y redacta las notas validadas (semana 22)."
+requires-python = ">=3.12"
+dependencies = [
+    "llm-dev-core",
+    "PyYAML>=6,<7",
+]
+
+[tool.uv.sources]
+llm-dev-core = { path = "../llm-dev-core", editable = true }
+
+[project.scripts]
+release-walker = "release_walker.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/release_walker"]
+
+[dependency-groups]
+dev = ["pytest>=8,<9"]
